@@ -149,7 +149,6 @@ header nav ul li a:hover {
     padding: 0 0 20px 0;
 }
 
-
 .gallery {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
@@ -170,6 +169,12 @@ header nav ul li a:hover {
     grid-column-end: 4;
     grid-row-start: 1;
     grid-row-end: 4;
+}
+
+.img-descrip {
+    text-decoration: none;
+    font-size: 22px;
+    color: var(--primary-color;)
 }
 
 .gallery-item-2 {
