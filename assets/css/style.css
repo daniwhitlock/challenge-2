@@ -1,3 +1,6 @@
+/* Still need to do: fix gallery image, add media queries */
+
+
 * {
     margin: 0;
     padding: 0;
@@ -109,7 +112,7 @@ header nav ul li a:hover {
     padding: .75em;
 }
 .item-header {
-    font-size: 2.8vw;
+    font-size: 40px;
     text-align: right;
     align-items: flex-start; /*non-main axis -up/down centering */
     justify-content: flex-end; /* main axis-in this case x axis */
@@ -137,7 +140,7 @@ header nav ul li a:hover {
     font-style: lighter;
 }
 .bio::first-line {
-    font-size: x-large;
+    font-size: 20px;
     color: var(--tertiary-color);
 }
 /* end About me section */
@@ -267,12 +270,52 @@ footer span {
 
 /* End footer style */
 @media screen and (max-width: 768px) {
-    #dani-img {
-        height: 20px ;
-        width: 20px ;
+    .about-grid-container {
+       
+        grid-template-columns: 1.5fr;
+        grid-template-rows: 1fr 5fr 10fr;
+        grid-gap: 15px;
+        margin: 10px 40px 40px 20px;
+        
     }
-    .p
-   /* move the grid */
-}
+    .grid-item {
+        display: flex;
+         /* background-color: gray;  */
+        padding: .15em;
+    } 
+    
+    
+    .item-header {
+        font-size: 25px;
+        text-align: center;
+        align-items: center; /*non-main axis -up/down centering */
+        justify-content: center; /* main axis-in this case x axis */
+        border-bottom: 5px solid var(--tertiary-color); 
+        border-right: none;
+        grid-row: 1/2;
+        /* display: inline-block; */
+    }
+    
+    .item-selfie img {
+        width:75%;
+        max-height: 75%;
+        justify-content: center;
+        align-items: center;
+        object-fit: cover;
+    }
+    .item-selfie {
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+    .item-bio {
+        grid-column: 1/2;
+        grid-row: 3/4;
+    }
+    .item-bio p {
+        font-size: 15px;
+        text-align: left; 
+        line-height: 1.5;
+        font-style: lighter;
+    }
 
 
