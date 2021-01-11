@@ -11,30 +11,38 @@
     --primary-color: rgb(255, 255, 255);
     --secondary-color: rgb(36, 34, 34); 
     --tertiary-color: rgb(13, 183, 206);
+    --fourth-color: rgb(151, 3, 3);
 }
 
 body {
     color: var(--primary-color);
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background: var(--secondary-color);
 }
+h2 {
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
 /*Begin header style */
 header {
-    padding: 20px 35px;
+    padding: 10px 35px;
     background-color: var(--secondary-color);
     display: flex;
     justify-content: space-between;
-    /* position: sticky;
-    position: -webkit-sticky; */
+    position: sticky;
+    position: -webkit-sticky; 
     top: 0;
     z-index: 9999;
 }
 
-header h1 {
+.logo {
+    font-family: 'Raleway', sans-serif;
+    color: var(--fourth-color);
     font-weight: bold;
-    padding: 0 5px 5px 60px;
-    font-size: 3vw;
-    color: var(--tertiary-color);
+    padding: 2px 5px 2px 4px;
+    font-size: 3em;
 }
 
 header nav {
@@ -56,44 +64,40 @@ header nav ul {
 }
 
 header nav ul li a {
+    text-transform: uppercase;
     padding: 10px 15px;
     font-weight: lighter;
-    font-size:1.65vw;
-    text-shadow: 0 0 10px var(--tertiary-color);
+    font-size:2em;
     text-align: center;
 }
 
 header nav ul li a:hover {
-    background:var(--primary-color);
-    color: var(--tertiary-color);
-    border-radius: 15px;
-    text-shadow: none;
-    font-weight: bold;
+    border-bottom: solid 2px var(--fourth-color);
 }
 /*End header style*/
 
 /*Begin hero style*/
 .hero {
-    background-image: url("../images/header-image.jpg");
-    background-size: 100% 100%;
-    background-position: center; 
     display: flex;
-    bottom: 25px;
-    height: 250px; 
-    width: 100%;
-    align-items: flex-end; 
-    justify-content: flex-end;
-    font-size: 2vw;
+    align-items: center;
+    justify-content: center;
+    padding-top: 40px;
+    text-transform: uppercase;
+    font-family: 'Raleway', sans-serif;
 }
 
 .hero h2 {
     color: var(--primary-color);
-    font-weight: lighter;
-    font-style: italic;
-    margin: auto 30px 30px 30px; 
-    padding: 200px 15px 15px auto;
+    text-align: center;
+    font-size: 6vw;
+    font-weight: 500;
 }
-
+.hero p {
+    text-align: center;
+    color: var(--fourth-color);
+    font-weight: 400;
+    font-size: 2vw;
+}
 /*End hero style */
 
 /*Begin  about-me section */
@@ -113,10 +117,10 @@ header nav ul li a:hover {
 }
 .item-header {
     font-size: 40px;
-    text-align: right;
-    align-items: flex-start; /*non-main axis -up/down centering */
-    justify-content: flex-end; /* main axis-in this case x axis */
-    border-right: 5px solid var(--tertiary-color); 
+    text-align: center;
+    align-items: center; /*non-main axis -up/down centering */
+    justify-content: center; /* main axis-in this case x axis */
+    /* border-right: 5px solid var(--tertiary-color);  */
     grid-column: 1/2;
 }
 
@@ -126,69 +130,80 @@ header nav ul li a:hover {
     object-fit: cover;
 }
 .item-selfie {
-    grid-column: 2/3;
+    grid-column: 5/6;
     grid-row: 1/2;
 }
 .item-bio {
-    grid-column:3/6;
+    grid-column:2/5;
     grid-row: 1/2;
+    align-items:center;
 }
 .item-bio p {
-    font-size: 15px;
+    font-size: 25px;
     text-align: left; 
     line-height: 1.5;
     font-style: lighter;
 }
-.bio::first-line {
-    font-size: 20px;
-    color: var(--tertiary-color);
+.bio{
+    font-size: 30px;
+    color: var(--fourth-color);
+    font-weight: 500;
 }
+.bio-smaller {
+    font-size: 23px;
+    color: var(--primary-color);
+    font-style: italic;
+    font-weight: lighter;
+}
+
+
 /* end About me section */
 
 /* Begin work section */
 .work-grid-container {
     display: grid;
-    grid-template-columns: 1.5fr repeat(11, 1fr);
-    grid-template-rows: repeat(12, 1fr);
+    grid-template-columns: 1.5fr 2fr repeat(2, 1fr);
+    grid-template-rows: (1, 10vw);
     grid-gap: 20px;
-    margin: 40px 40px 40px 143px;
+    margin: 40px 40px 40px 20px;
+    /* grid-auto-flow: dense; */
 }
 
 .work-header {
-    grid-column: 1/2;
+    
     grid-row: span 12;
 }
-
-
+.portfolio-description {
+    text-decoration: none;
+    color: var(--primary-color);
+}
 
 .first-image {
     background-image: url("../images/run-buddy.jpg");
-    grid-column: span 5;
-    grid-row: span 5;
-    background-size: ;
+    grid-column: 2/3; /* get specific about rows and columns*/
+    grid-row: span 6;
+    
 }
 .second-image {
     background-image: url("../images/PasswordGenerator.JPG");
-    grid-column: span 3;
-    grid-row: span 3;
+    grid-column: span 2;
+    grid-row: span 4;
 }
 
 .third-image {
     background-image: url("../images/RobotGladiators.JPG");
     grid-column: span 2;
-    grid-row: span 2;
+    grid-row: span 4;
 }
 
 .fourth-image {
-    background-image: url("../images/dragon.JPG");
-    grid-column: span 3;
-    grid-row: span 3;
-}
-.border {
-    border-bottom: 5px solid var(--tertiary-color);
+    background-image: url("../images/Cravings.JPG");
+    grid-column: span 2;
+    grid-row: span 4;
 }
 
-.flex-item-descrip span {
+
+.grid-item div{
     display: flex; 
     flex-direction: column; 
     position: relative;
@@ -199,10 +214,13 @@ header nav ul li a:hover {
     text-align: center;
 }
 
-a {
+.grid-item div h3 {
     text-decoration: none;
     color: var(--secondary-color);
     font-weight: bold; 
+}
+a {
+    text-decoration: none;
 }
 /* End work section */
 
@@ -242,7 +260,7 @@ a {
     align-self: center;
     text-decoration: none;
     color: var(--primary-color);
-    border-bottom: 2px solid var(--tertiary-color);
+    border-bottom: 2px solid var(--fourth-color);
     margin: 0 30px 0 30px;    
 }
 
@@ -251,24 +269,26 @@ a {
 
 /*Footer style*/
 footer {
-    background-color:var(--tertiary-color);
+    background-color:var(--fourth-color);
     display: flex;
     text-align: flex-start;
-    text-justify; flex-start;
+    text-justify: flex-start;
     padding: 0 0 0 40px;
 }
 
 footer h2 {
     font-weight: lighter;
     padding: 10px 10px 10px 10px;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     font-style: italic;
 }
 
 footer span {
-    font-style: bold;
-    font-weight: bold;
+    font-weight: 700;
+    font-size: 30px;
+    padding-left: 10px;
 }
+
 
 
 /* End footer style */
